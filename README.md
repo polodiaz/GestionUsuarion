@@ -59,18 +59,14 @@ Solucion:
 Utilizando el siguiente comando CREATE TABLE usuarios; 
  
 CREATE TABLE usuarios( 
-
     id INT AUTO_INCREMENT PRIMARY KEY, 
-
     nombre VARCHAR(255), 
-
     email VARCHAR(255), 
-
     edad INT 
-
 ); 
   
 ```
+- NOTA: Es importante que se genere la base de datos en MySQL "usuarios_andes" y posterior a la creacion de la DB, crear la tabla llamada usuarios
 
 
 
@@ -226,7 +222,7 @@ Para el front de la aplicacion "gestion de usuarios" se genero por medio de Reac
 - Importante! --> INSTALACION DE REACT
 - Instalaciones: 
 
-bash
+```bash
   npm create vite
   cd client -- ingresar al directorio creado
   npm install -- instalacion de paquetes
@@ -236,6 +232,7 @@ bash
   react-hot-toast --> Biblioteca empleada para mostrar notificaciones cuando se realizan cambios en la aplicación web.
   axios --> Librería utilizada para realizar peticiones HTTP desde el cliente.
   react-hook-form --> Utilizado para facilitar el manejo y recolección de datos mediante formularios en React.
+```
 
 ## 1.2. CRUD
 Se realizaron las peticiones para el Backend por medio de la libreria Axios, creando una baseURL a nuestra ruta "http://127.0.0.1:8000/api/usuarios/" para las cuatro peticiones:
