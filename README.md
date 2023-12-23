@@ -30,14 +30,14 @@ Frontend: React
 Crea una base de datos MySQL llamada usuarios_andes 
 
   
-bash
+```bash
 Solución: 
 
 Se procedió a crear en Mysql una base de Datos llamada usuarios_andes. 
 Utilizano el siguiente comando CREATE DATABASE usuarios_andes; se adjunta Ejemplo.
 
 create DATABASE usuarios_andes;
-
+```
  
 
 
@@ -53,7 +53,7 @@ id (clave primaria, autoincremento)
 nombre,email,Edad 
 
  
-bash
+```bash
 
 Solucion:
 Utilizando el siguiente comando CREATE TABLE usuarios; 
@@ -70,7 +70,7 @@ CREATE TABLE usuarios(
 
 ); 
   
-
+```
 
 
 
@@ -81,7 +81,7 @@ Modelo de Usuario:
 ¿Crea un modelo Usuario que represente a la tabla usuarios en la base de datos.? 
  
 
- bash
+```bash
  Solucion:  
  
 
@@ -95,7 +95,7 @@ class Usuario(models.Model):
     def _str_(self):
         return self.nombre
 
-  
+```  
 
 
 4.
@@ -107,7 +107,7 @@ Crear: ¿ Escribe una función que permita agregar un nuevo usuario a la base de
 
  
  
-bash
+```bash
 Solución: 
  
   Se procede con la función Post, dentro un bloque Try la cual intenta la ejecución del código respectivo y el caso hipotético de una excepción se ejecuta el except , a continuación, imagen alusiva. 
@@ -125,15 +125,14 @@ def post(self,request):
             print(f'json decode error:{error}')
             datos = {'mensaje':"solicitud de JSON Invalida"}
         return JsonResponse(datos)
-  
-
+```
 
  5.
  Leer: ¿ Escribe una función para leer los datos de un usuario específico o de todos los usuarios. ?  
 
  
  
-bash
+```bash
 
 Solucion: 
  
@@ -151,7 +150,7 @@ def get(self,request, id=0):
             if len(usuarios) > 0:
                 datos = {'mensaje': "Exito", 'usuarios': usuarios}
                 return JsonResponse(datos)
-  
+```  
 
 
 6.
@@ -161,7 +160,7 @@ Actualizar: ¿ Escribe una función que actualice los datos de un usuario existe
  
 
 
-bash
+```bash
 Solución: 
 
  
@@ -183,7 +182,7 @@ Se procede con la creación de la función PUT la cual obtiene los datos de Usua
         else:
             datos = {'mensaje': "error en la actualizacion"}
         return JsonResponse(datos)
-
+```
   
 
 
@@ -193,7 +192,7 @@ Se procede con la creación de la función PUT la cual obtiene los datos de Usua
  
 
  
-bash
+```bash
 Solución: 
 
 Se procede con la creación de la función delete la cual obtiene los datos de Usuario el cual es el modelo y se filtra por el ID y cuando la longitud es mayor a 0 la elimina se utiliza el método delete que trae Django por defecto.
@@ -208,7 +207,7 @@ Se procede con la creación de la función delete la cual obtiene los datos de U
         else:
             datos = {'mensaje': "error en la eliminacion"}
         return JsonResponse(datos)
-  
+```
 
 8. Rutas y Vistas: 
 
